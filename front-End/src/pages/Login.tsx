@@ -55,28 +55,33 @@ const Login = () => {
 
             <form onSubmit={handleSubmit} className="space-y-5">
               {!isLoggedIn && (
-                <>
+                
                   <label className="text-sm flex flex-col gap-1">
                     Name
                     <div className="relative">
-                      <UserIcon className=" absolute left-3.5 top-1/2 translate-y-1/2 size-4 text-app-text-light"/>
+                      <UserIcon className=" absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-app-text-light"/>
                       <input 
-                        name="name" type="text"
+                        className="w-full pl-11 pr-4 py-3 text-sm bg-white rounded-xl border 
+                        not-focus:border-app-border transition-all"
+                        name="name" type="text" required placeholder="Your Name"
                         value={name} onChange={ (e)=>setName(e.target.value)}
                       />
                     </div>
                   </label>
-
+              )}
                   <label className="text-sm flex flex-col gap-1">
-                    Email
+                    Email Address
                     <div className="relative">
                         <MailIcon
                             className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-app-text-light"
                         />
                         <input
-                            type="email"
+                          className="w-full pl-11 pr-4 py-3 text-sm bg-white rounded-xl border 
+                           not-focus:border-app-border transition-all"
+                            type="email" required
                             name="email"
                             value={email}
+                            placeholder="you@example.com"
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
@@ -88,16 +93,16 @@ const Login = () => {
                             className="absolute left-3.5 top-1/2 -translate-y-1/2 size-4 text-app-text-light"
                         />
                         <input
-                            type="password"
+                        className="w-full pl-11 pr-4 py-3 text-sm bg-white rounded-xl border 
+                        not-focus:border-app-border transition-all"
+                            type="password" required
                             name="password"
                             value={password}
+                            placeholder="••••••••"
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                   </label>
-                </>
-              )}
-
             </form>
 
         </div>
