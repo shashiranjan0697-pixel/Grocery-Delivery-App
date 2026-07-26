@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom";
 import { heroSectionData } from "../assets/assets";
-import { BikeIcon, Lock, MailIcon, UserIcon } from "lucide-react";
+import { BikeIcon, Loader2Icon, Lock, MailIcon, UserIcon } from "lucide-react";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -103,6 +103,10 @@ const Login = () => {
                         />
                     </div>
                   </label>
+                <button type="submit" disabled={loading} className="w-full flex-center py-3 bg-green-950 text-white font-semibold
+                rounded-xl hover:bg-green-900 transition-colors disabled:opacity-50">
+                    {loading ? <Loader2Icon className="animate-spin" /> : isLoggedIn ? "Sign In" : "Sign Up"}
+                </button>
             </form>
 
         </div>
