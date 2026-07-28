@@ -11,7 +11,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e: React.SubmitEvent) =>{
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {

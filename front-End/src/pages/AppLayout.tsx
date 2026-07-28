@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom"
+import Banner from "../component/Banner"
+import Navbar from "../component/Navbar"
 
 const AppLayout = () => {
   return (
     <>
-      <p> Banner</p>
-      <p>NavBar</p>
+      <Banner />
+      <Navbar />
       <main className=" min-h-screen">
          <Outlet />
       </main>
